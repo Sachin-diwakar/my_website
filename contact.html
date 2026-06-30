@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Sachin</title>
+  <title>Contact | Sachin</title>
   <style>
     :root {
       --ink: #172033;
@@ -91,8 +91,8 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(3.5rem, 13vw, 8rem);
-      line-height: 0.92;
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      line-height: 0.95;
       font-weight: 900;
       letter-spacing: 0;
     }
@@ -104,19 +104,31 @@
       font-size: clamp(1rem, 2.3vw, 1.2rem);
       line-height: 1.7;
     }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 1.6rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 0.85rem 1.1rem;
+      border-radius: 8px;
+      background: var(--accent);
+      box-shadow: 0 14px 32px rgba(15, 118, 110, 0.22);
+    }
   </style>
 </head>
 <body>
   <main>
     <nav aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" aria-current="page">Contact</a>
     </nav>
-    <p class="eyebrow">A tiny page with a little glow</p>
-    <h1>Hello, world! from Sachin
-      </h1>
-    <p>Welcome to your first HTML moment, set on a soft, layered background.</p>
+    <p class="eyebrow">Say hello</p>
+    <h1>Contact</h1>
+    <p>Have a project, question, or idea to share? Send a note and start the conversation.</p>
+    <a class="contact-link" href="mailto:sachin@example.com">sachin@example.com</a>
   </main>
 </body>
 </html>
