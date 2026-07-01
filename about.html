@@ -20,22 +20,14 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
       overflow-x: hidden;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      background:
-        linear-gradient(rgba(255, 247, 229, 0.24), rgba(12, 20, 34, 0.48)),
-        url("https://source.unsplash.com/lYp_dhLmOCQ/1920x1080") center / cover no-repeat fixed;
+      background: #f7efe1;
     }
 
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background: rgba(255, 255, 255, 0.12);
+      display: none;
     }
 
     header {
@@ -64,15 +56,11 @@
     }
 
     main {
-      width: min(88vw, 720px);
-      margin-top: 5.5rem;
-      padding: clamp(2rem, 7vw, 5rem);
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.82);
-      border-radius: 8px;
-      background: var(--paper);
-      box-shadow: 0 28px 80px rgba(35, 48, 71, 0.18);
-      backdrop-filter: blur(22px);
+      min-height: 100vh;
+      padding: 7.5rem clamp(1.25rem, 7vw, 6rem) 2.5rem;
+      background:
+        linear-gradient(135deg, rgba(255, 248, 231, 0.98), rgba(248, 213, 126, 0.56)),
+        #f7efe1;
     }
 
     nav {
@@ -108,20 +96,59 @@
       text-transform: uppercase;
     }
 
+    .about-hero {
+      width: min(1120px, 100%);
+      min-height: calc(100vh - 10rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
+      margin: 0 auto;
+    }
+
+    .about-copy {
+      max-width: 42rem;
+    }
+
     h1 {
       margin: 0;
-      font-size: clamp(3rem, 10vw, 6.5rem);
-      line-height: 0.95;
-      font-weight: 900;
+      font-size: clamp(1.5rem, 2.8vw, 2.35rem);
+      line-height: 1.22;
+      font-weight: 500;
       letter-spacing: 0;
+      color: #172033;
+    }
+
+    h1 strong {
+      color: var(--accent);
+      font-weight: 900;
     }
 
     p {
       max-width: 34rem;
-      margin: 1.35rem auto 0;
+      margin: 1.35rem 0 0;
       color: rgba(23, 32, 51, 0.72);
       font-size: clamp(1rem, 2.3vw, 1.2rem);
       line-height: 1.7;
+    }
+
+    .hero-image {
+      min-height: clamp(24rem, 50vw, 38rem);
+      border-radius: 8px;
+      background:
+        linear-gradient(rgba(12, 20, 34, 0.05), rgba(12, 20, 34, 0.24)),
+        url("https://source.unsplash.com/1200x1400/?boy,sunset,silhouette") center / cover no-repeat;
+      box-shadow: 0 30px 80px rgba(35, 48, 71, 0.22);
+    }
+
+    footer {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 1.4rem 0 0;
+      color: rgba(23, 32, 51, 0.74);
+      font-size: clamp(0.98rem, 2vw, 1.1rem);
+      font-weight: 750;
+      text-align: center;
     }
 
     @media (max-width: 520px) {
@@ -131,7 +158,21 @@
       }
 
       main {
-        margin-top: 9rem;
+        padding-top: 10.5rem;
+      }
+
+      .about-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-image {
+        min-height: 22rem;
       }
     }
   </style>
@@ -146,9 +187,17 @@
     </nav>
   </header>
   <main>
-    <p class="eyebrow">About this space</p>
-    <h1>About Sachin</h1>
-    <p>This little site is a warm starting point for sharing projects, ideas, and the story behind the work. It keeps things simple, personal, and easy to explore.</p>
+    <section class="about-hero" aria-label="About Sachin">
+      <div class="about-copy">
+        <p class="eyebrow">About this space</p>
+        <h1>Hi! I'm <strong>Sachin Diwakar</strong>, a passionate learner with a keen interest in technology, programming, and web development. I enjoy exploring new skills, solving problems, and creating simple yet meaningful projects. I'm always eager to learn, grow, and turn my ideas into reality through creativity and hard work.</h1>
+        <p>This little site is a warm starting point for sharing projects, ideas, and the story behind the work. It keeps things simple, personal, and easy to explore.</p>
+      </div>
+      <div class="hero-image" role="img" aria-label="A boy facing toward a sunset"></div>
+    </section>
+    <footer>
+      "Every meaningful project begins with curiosity, grows through learning, and shines through effort."
+    </footer>
   </main>
 </body>
 </html>
